@@ -81,6 +81,10 @@ BLOCKED  email.send(to="refunds@evil.example")
 4. OpenGPL policy ceilings
 5. Model-assisted compilation for open-ended requests
 
+## Built on switchyard
+
+`intentlock` will be a Go binary built on [switchyard](https://github.com/sadayamuthu/switchyard), OpenAstra's shared MCP proxy core: envelope enforcement is a switchyard hook that blocks `tools/call` requests outside the envelope. It stacks with the other switchyard tools by chaining (`agent → fuse → intentlock → taintline → rewind → MCP server`).
+
 ## Related OpenAstra projects
 
 - [Unasked](https://github.com/sadayamuthu/unasked): the same idea after the fact, for code edits
