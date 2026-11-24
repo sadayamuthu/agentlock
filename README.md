@@ -113,7 +113,7 @@ The plan, from the first working version to 1.0, is in [ROADMAP.md](ROADMAP.md).
 
 ## Built on switchyard
 
-`agentlock` will be a Go binary built on [switchyard](https://github.com/sadayamuthu/switchyard), OpenAstra's shared MCP proxy core: envelope enforcement is a switchyard hook that blocks `tools/call` requests outside the envelope. It stacks with the other switchyard tools by chaining (`agent → agentfuse → agentlock → agenttaint → agentrewind → MCP server`).
+`agentlock` will be a Go binary built on [switchyard](https://github.com/sadayamuthu/switchyard), OpenAstra's shared MCP proxy core: envelope enforcement is a switchyard hook that blocks `tools/call` requests outside the envelope. It stacks with the other switchyard tools by chaining (`agent → agentfuse → agentlock → agenttaint → agentrewind → agentbox → MCP server`).
 
 ---
 
