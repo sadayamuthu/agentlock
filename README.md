@@ -1,6 +1,6 @@
 <div align="center">
 
-# IntentLock
+# AgentLock
 
 <h3>Tool calls limited to what the user asked for</h3>
 
@@ -16,10 +16,10 @@
 
 ---
 
-## What is IntentLock?
+## What is AgentLock?
 
 Tool calls limited to what the user actually asked for. At the start of a
-task, `intentlock` turns the user's request into a capability envelope: the
+task, `agentlock` turns the user's request into a capability envelope: the
 tools the agent may call, the argument values they may take, and the
 recipients and paths they may touch. An MCP proxy enforces the envelope, so a
 prompt injection that tries to widen the task is blocked before the call runs.
@@ -49,7 +49,7 @@ request in front of the agent right now.
    Simple requests compile with rules; ambiguous ones are shown to the user to
    confirm. Example: "Refund order #4411" becomes
    `refund(order_id = 4411, amount <= original_amount)`.
-3. **Enforce at the proxy.** `intentlock` sits between the agent and its MCP
+3. **Enforce at the proxy.** `agentlock` sits between the agent and its MCP
    servers. Every call is checked against the envelope: allowed, blocked, or
    held for approval.
 4. **Widen explicitly.** If the agent genuinely needs more, it asks, and the
@@ -113,14 +113,14 @@ The plan, from the first working version to 1.0, is in [ROADMAP.md](ROADMAP.md).
 
 ## Built on switchyard
 
-`intentlock` will be a Go binary built on [switchyard](https://github.com/sadayamuthu/switchyard), OpenAstra's shared MCP proxy core: envelope enforcement is a switchyard hook that blocks `tools/call` requests outside the envelope. It stacks with the other switchyard tools by chaining (`agent → fuse → intentlock → taintline → rewind → MCP server`).
+`agentlock` will be a Go binary built on [switchyard](https://github.com/sadayamuthu/switchyard), OpenAstra's shared MCP proxy core: envelope enforcement is a switchyard hook that blocks `tools/call` requests outside the envelope. It stacks with the other switchyard tools by chaining (`agent → agentfuse → agentlock → agenttaint → agentrewind → MCP server`).
 
 ---
 
 ## Related OpenAstra projects
 
 - [Unasked](https://github.com/sadayamuthu/unasked): the same idea after the fact, for code edits
-- [Taintline](https://github.com/sadayamuthu/taintline): tracks *which content* is trying to make a call
+- [AgentTaint](https://github.com/sadayamuthu/agenttaint): tracks *which content* is trying to make a call
 - AgentID (in the lab): the identity an envelope is issued to
 
 ---
@@ -133,7 +133,7 @@ Design feedback, real-world cases and fixes are welcome. See [CONTRIBUTING.md](C
 
 ## Security
 
-Please report vulnerabilities privately through [GitHub security advisories](https://github.com/sadayamuthu/intentlock/security/advisories/new), not in a public issue. See [SECURITY.md](SECURITY.md) for what to include and what's in scope.
+Please report vulnerabilities privately through [GitHub security advisories](https://github.com/sadayamuthu/agentlock/security/advisories/new), not in a public issue. See [SECURITY.md](SECURITY.md) for what to include and what's in scope.
 
 ---
 
@@ -145,10 +145,10 @@ Please report vulnerabilities privately through [GitHub security advisories](htt
 
 <div align="center">
 
-**IntentLock: tool calls limited to what the user asked for**
+**AgentLock: tool calls limited to what the user asked for**
 
-IntentLock is managed by [OpenAstra](https://openastra.org)
+AgentLock is managed by [OpenAstra](https://openastra.org)
 
-[GitHub](https://github.com/sadayamuthu/intentlock) · [Thesis](THESIS.md) · [Roadmap](ROADMAP.md)
+[GitHub](https://github.com/sadayamuthu/agentlock) · [Thesis](THESIS.md) · [Roadmap](ROADMAP.md)
 
 </div>

@@ -4,14 +4,14 @@
 
 Please don't report security problems in a public issue, pull request or
 discussion. Use
-[**Report a vulnerability**](https://github.com/sadayamuthu/intentlock/security/advisories/new)
+[**Report a vulnerability**](https://github.com/sadayamuthu/agentlock/security/advisories/new)
 on the repository's Security tab instead. Only the maintainers can see the
 report.
 
 Include what you can of:
 
-- the IntentLock version (`intentlock version`) or commit, your Go version and OS
-- how IntentLock was used, and its configuration with secrets removed
+- the AgentLock version (`agentlock version`) or commit, your Go version and OS
+- how AgentLock was used, and its configuration with secrets removed
 - steps to reproduce
 - what happened and what you expected
 
@@ -21,14 +21,14 @@ rather it didn't.
 
 ## Supported versions
 
-IntentLock is at the design stage and has no releases yet. Once it does,
+AgentLock is at the design stage and has no releases yet. Once it does,
 fixes land in the latest release only, until 1.0.
 
 ## What counts
 
-IntentLock sits between an agent and its MCP servers and allows, blocks or holds each tool call against the current task's envelope.
+AgentLock sits between an agent and its MCP servers and allows, blocks or holds each tool call against the current task's envelope.
 
-IntentLock is a security tool, so anything that breaks one of these promises
+AgentLock is a security tool, so anything that breaks one of these promises
 is a security issue:
 
 - **Deny by default.** A call outside the envelope that is allowed is in scope.
@@ -38,7 +38,7 @@ is a security issue:
 These are by design, and not vulnerabilities:
 
 - An envelope the user approves allows what it says.
-- IntentLock limits which calls run, not what data they carry; that's Taintline.
+- AgentLock limits which calls run, not what data they carry; that's AgentTaint.
 
 A wrong result that isn't covered above is a bug, not a vulnerability. Report
 it in a normal issue; see [CONTRIBUTING.md](CONTRIBUTING.md).

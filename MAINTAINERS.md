@@ -15,7 +15,7 @@ None yet.
 
 ## Wanted
 
-IntentLock has one maintainer, and wants more, especially from organizations
+AgentLock has one maintainer, and wants more, especially from organizations
 not already represented. Areas where help would make the biggest difference:
 
 - the rule-based envelope compiler,

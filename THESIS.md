@@ -1,4 +1,4 @@
-# IntentLock: thesis
+# AgentLock: thesis
 
 **In one line:** a prompt injection doesn't need new permissions, only
 standing ones, so scope each task's permissions to what the user actually
@@ -33,12 +33,12 @@ and MCP gives a single place to enforce.
 
 ## What success looks like
 
-- On an AgentDojo-style injection benchmark, IntentLock blocks most attacks
+- On an AgentDojo-style injection benchmark, AgentLock blocks most attacks
   that redirect existing permissions, while completing most benign tasks
   without extra prompts.
 - Confirmation prompts appear on a small minority of tasks in realistic
   workloads.
-- Runs on the shared OpenAstra proxy core alongside Taintline.
+- Runs on the shared OpenAstra proxy core alongside AgentTaint.
 
 ## What would prove us wrong
 
@@ -57,5 +57,5 @@ Detecting injections in content, or replacing organisation-wide policy
 ## Where it fits
 
 Area VIII, AI Runtime Security. Pairs with
-[Taintline](https://github.com/sadayamuthu/taintline) (which data drives a
+[AgentTaint](https://github.com/sadayamuthu/agenttaint) (which data drives a
 call) and AgentID (who the envelope is issued to).
